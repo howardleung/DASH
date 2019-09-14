@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { CameraFeed } from './CameraFeed';
 
 class Camera extends Component {
