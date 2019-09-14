@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
+import Camera from './Camera'
 import './App.css';
-import fire from './config/Fire'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      camera_data: "",
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Camera />
+      </div>
+    )
+  }
+}
+
+export default App;
+  /*
   constructor(props){
     super(props);
     this.state = {
@@ -36,5 +54,4 @@ class App extends Component {
     );
   }
 }
-
-export default App;
+*/
