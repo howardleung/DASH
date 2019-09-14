@@ -1,45 +1,28 @@
 import React, { Component } from 'react';
-import Webcam from "react-webcam";
+import ReactDOM from 'react-dom';
+import { CameraFeed } from './CameraFeed';
 
-const videoConstraints = {
-  width: 1280,
-  height: 720,
-  facingMode: "user"
-};
-
-const WebcamComponent = () => <Webcam />
-
-const WebCamCapture = () => {
-  const webcamRef = React.useRef(null);
-
-  const capture = React.useCallback(
-    () => {
-      const imageSrc = webcamRef.current.getScreenshot();
-    },
-    [webcamRef]
-  );
-
-  return (
-    <div>
-      <Webcam
-        audio={false}
-        height={720}
-        ref={webcamRef}
-        screenshotFormat="image/jpeg"
-        width={1280}
-        videoConstraints={videoConstraints}
-      />
-      <button onClick={capture}>Capture photo</button>
-    </div>
-  )
+const handleImage = async file => {
+  console.log(file);
+  
 }
 
 class Camera extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      camera_data: "",
+    }
+  }
+  
   render() {
-    return (
+    return(
       <div className="Camera">
-        <WebCamCapture> capture</WebCamCapture>
+        <h1>test</h1>
+        <CameraFeed sendFile={handleImage} />
       </div>
-    );
+    )
   }
 }
+
+export default Camera;
