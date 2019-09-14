@@ -12,7 +12,7 @@ class Camera extends Component {
   
   handleImage = (file) => {
     console.log(file)
-    camera_data = file;
+    this.camera_data = file;
     this.context.router.push("/"); // where it goes after Camera takes a pic
   }
 
