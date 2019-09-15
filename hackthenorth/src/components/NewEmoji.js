@@ -9,21 +9,9 @@ class NewEmoji extends React.Component {
 
 
   handleFindNewEmoji() {
-    var userId = fire.auth().currentUser.uid;
-    
     // jump to Camera
     console.log("test");
     this.props.history.push("./Camera");
-
-    fire.database().ref('/users/' + userId).once('value').then(snap => {
-      var newAr = snap.val().emo;
-      newAr.unshift(2);
-      fire.database().ref('users/' + userId).set({
-        emo: newAr,
-        chatting: snap.val().chatting,
-        history: snap.val().history,
-      });
-    });
   }
 
   render () {

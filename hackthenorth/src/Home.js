@@ -16,6 +16,7 @@ class Home extends Component {
       user: props.user,
       speed: 10,
     }
+    //if (this.props.location.state != null && this.props.location.state.updateDB) { this.updateDB() };
   }
 
   componentDidMount(){
@@ -26,7 +27,7 @@ class Home extends Component {
     //     speed: snap.val()
     //   });
     // });
-  }
+  }  
 
   logout() {
     fire.auth().signOut();
