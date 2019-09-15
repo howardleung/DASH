@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import App from './App';
 import Home from './Home';
 import Login from './Login';
+import Camera from './Camera';
+import Analyze from './Analyze';
 
 
 ReactDOM.render(<BrowserRouter>
@@ -13,7 +15,8 @@ ReactDOM.render(<BrowserRouter>
     <Route exact path="/" component={App} />
     <Route path="/Home" component={Home} />
     <Route path="/Login" component={Login} />
-    { /*<Route path="/something" component={Something} /> */ }
+    <Route path="/Camera" component={Camera} />
+    <Route path="/Analyze" component={Analyze} />
   </Switch>
 </BrowserRouter>, document.getElementById('root'));
 

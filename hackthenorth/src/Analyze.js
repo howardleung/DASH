@@ -40,6 +40,9 @@ function base64ToArrayBuffer(base64) {
 class Analyze extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      emID: null
+    };
 
     var imgData = this.props.location.state.img_data;
     //console.log(imgData);
@@ -61,7 +64,28 @@ class Analyze extends Component {
       .then(res => res.json())
       .then(res => { 
         console.log(res);
+        var max = 0;
+        var emotionObject = res[0].faceAttributes.emotion;
+        for (var emotion in emotionObject){
+          if (emotionObject[emotion] > max) {
+            console.log(emotionObject[emotion]);
+            var trueEmotion = emotion;
+            max = emotionObject[emotion];
+          }
+        }
+        var emotionID
+        if (trueEmotion == "anger") emotionID = 0;
+        if (trueEmotion == "contempt") emotionID = 0;
+        if (trueEmotion == "disgust") emotionID = 0;
+        if (trueEmotion == "fear") emotionID = 1;
+        if (trueEmotion == "happiness") emotionID = 2;
+        if (trueEmotion == "neutral") emotionID = 3;
+        if (trueEmotion == "sadness") emotionID = 1;
+        if (trueEmotion == "surprise") emotionID = 2;
+        this.state.emID = emotionID;
       });
+
+      console.log(this.state.emID);
 
     //  var img = document.createElement("img");
     //  img.setAttribute("src", imgData);

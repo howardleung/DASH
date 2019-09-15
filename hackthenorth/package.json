@@ -8,6 +8,7 @@
     "cloudinary-jquery": "^2.7.4",
     "create-react-app": "^3.1.1",
     "downloadjs": "^1.4.7",
+    "firebase": "^6.6.1",
     "jquery": "^3.4.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

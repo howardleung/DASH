@@ -36,12 +36,12 @@ class Home extends Component {
   render() {
     return (
       <div className="app">
-        <ChatList />
-        <MessageList />
-        <SendMessageForm />
-        <NewChatform />
-        <EmojiPanel />
-        <NewEmoji />
+        <ChatList {...this.props} />
+        <MessageList {...this.props} />
+        <SendMessageForm {...this.props} />
+        <NewChatform {...this.props} />
+        <EmojiPanel {...this.props} />
+        <NewEmoji {...this.props} />
         <button onClick={this.logout}>Logout</button>
       </div>
     );
