@@ -82,7 +82,7 @@ class Analyze extends Component {
         this.setState({
           emID: emotionID
         }, this.finishedState);
-        this.updateDB(emotionID);
+        this.updateDB(trueEmotion);
       });
   }
 
