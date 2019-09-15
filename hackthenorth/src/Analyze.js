@@ -52,13 +52,14 @@ class Analyze extends Component {
 
     var result = fetch("https://faceanalysisstuff.cognitiveservices.azure.com/face/v1.0/detect", {
       method: "POST",
+      params: {
+        "returnFaceAttributes": "emotion"
+      },
       headers:{
         'Content-Type': 'application/octet-stream',
         'Ocp-Apim-Subscription-Key': '67ef477d985b4a27b8b8396ef9370a01'
       },
-      body: JSON.stringify({
-        "url": bin
-      }),
+      body: bin,
     })
       .then(function (response) {
         console.log(response.json());
