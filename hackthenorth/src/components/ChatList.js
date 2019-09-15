@@ -1,6 +1,6 @@
 import React from 'react';
 import fire from '../config/Fire'
-
+import '../css/ChatList.css'
 
 
 class ChatList extends React.Component {

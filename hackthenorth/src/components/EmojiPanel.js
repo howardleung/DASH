@@ -30,18 +30,19 @@ class EmojiPanel extends React.Component {
 
 	render () {			
 		return (
-			<div className="rooms-list">
-				<div className="help-text">past emotion</div>
+			<div className="message-list">
+        
+				<div className="room">past emotion</div>
 				{this.state.chats.map((message, index) => {
 					if(message !== -1){
             return (
-              <div key={index} className="message">
+              <div key={index} className="room">
                 <div className="message-username">{message}</div>
               </div>
             )
           }
           return (
-            <div key={index} className="message">
+            <div key={index} className="room">
               <div className="message-username"></div>
             </div>
           );

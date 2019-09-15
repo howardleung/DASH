@@ -1,6 +1,7 @@
 
 import React from 'react'
 import fire from '../config/Fire'
+import '../css/SendMessageForm.css'
 
 class SendMessageForm extends React.Component {
 	constructor(props) {
@@ -41,7 +42,7 @@ class SendMessageForm extends React.Component {
 	
 	render() {
 		return (
-			<form className="send-message-form">
+			<form >
 				<div>
 					<label>send: </label>
 					<input value={this.state.message} onChange={this.handleChangeMessage} className="message" placeholder="message" />

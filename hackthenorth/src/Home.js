@@ -6,6 +6,7 @@ import MessageList from './components/MessageList'
 import SendMessageForm from './components/SendMessageForm'
 import EmojiPanel from './components/EmojiPanel'
 import NewEmoji from './components/NewEmoji'
+import "./Home.css"
 
 class Home extends Component {
   constructor(props){
@@ -36,14 +37,21 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className="app">  
+        <div>
         <ChatList {...this.props} />
-        <MessageList {...this.props} />
-        <SendMessageForm {...this.props} />
-        <NewChatform {...this.props} />
-        <EmojiPanel {...this.props} />
-        <NewEmoji {...this.props} />
+          <NewChatform {...this.props} />
+        
+        </div>
+        <div>
+          <MessageList {...this.props} />
+            <SendMessageForm {...this.props} />
+        </div>
+        <div>
+          <EmojiPanel {...this.props} />
+          <NewEmoji {...this.props} />
         <button onClick={this.logout}>Logout</button>
+        </div>
       </div>
     );
   }
