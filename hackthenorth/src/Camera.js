@@ -82,8 +82,8 @@ class Camera extends React.Component {
 
   render() {
     const VideoConstraints = {
-      width: 1280,
-      height: 720,
+      width: 4096, //1280,
+      height: 4096, // 720,
       facingMode: 'user',
     };
 
@@ -91,10 +91,10 @@ class Camera extends React.Component {
       <div>
         <Webcam // this component takes in parameters to adjust height, width, format
           audio={false}
-          height={350}
+          height={500}
           ref={this.setRef}
-          screenshotFormat="image/jpeg"
-          width={350}
+          screenshotFormat="image/png"
+          width={500}
           videoConstraints={VideoConstraints} // stores saved image parameters and which camera to use
         />
         <div className="button-container"><button onClick={this.capture}>Capture photo</button></div>
