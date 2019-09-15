@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import fire from './config/Fire'
+import fire from './config/Fire';
+
 
 class App extends Component {
   constructor(props){
@@ -14,24 +15,31 @@ class App extends Component {
     this.authListener();
   }
 
-  authListener(){
-    fire.auth().onAuthStateChanged((user)=>{
-      console.log(user);
-      if(user){
-        this.setState({user});
-        localStorage.setItem('user', user.uid);
 
-      }else {
-        this.setState({user: null});
-        localStorage.removeItem('user');
+  authListener() {
+    fire.auth().onAuthStateChanged((u) => {
+      //console.log(user);
+      if (u) {
+        this.setState({ user: u });
+        //localStorage.setItem('user', user.uid);
+        
+      } else {
+        this.setState({ user: null });
+        //localStorage.removeItem('user');
+        console.log("gologin")
+        this.props.history.push("/Login");
+        return;
       }
-    })
+      this.props.history.push("/Home");
+      
+      //{this.state.user ? (<Home/>) : (<Login/>)}
+    });
   }
 
-  render() {
+  render(){
     return (
       <div className="App">
-        {this.state.user ? (<Home />) : (<Login />)}
+        splash
       </div>
     );
   }
