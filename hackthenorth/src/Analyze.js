@@ -50,22 +50,18 @@ class Analyze extends Component {
     var bin = base64ToArrayBuffer(imgData);
     console.log(bin);
 
-    var result = fetch("https://faceanalysisstuff.cognitiveservices.azure.com/face/v1.0/detect", {
+    var result = fetch("https://faceanalysisstuff.cognitiveservices.azure.com/face/v1.0/detect?returnFaceAttributes=emotion", {
       method: "POST",
-      params: {
-        "returnFaceAttributes": "emotion"
-      },
       headers:{
         'Content-Type': 'application/octet-stream',
         'Ocp-Apim-Subscription-Key': '67ef477d985b4a27b8b8396ef9370a01'
       },
       body: bin,
     })
-      .then(function (response) {
-        console.log(response.json());
-        return response.json();
-      })
-    //console.log(result);
+      .then(res => res.json())
+      .then(res => { 
+        console.log(res);
+      });
 
     //  var img = document.createElement("img");
     //  img.setAttribute("src", imgData);
